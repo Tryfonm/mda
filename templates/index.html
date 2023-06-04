@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home page for Noisy Leuven</title>
+    <style>
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Home page for Noisy Leuven</h1>
+
+    <a href="{{ url_for('home') }}" class="button">Home</a>
+    <a href="{{ url_for('parkstraat_2') }}" class="button">Parkstraat_2</a>
+    <a href="{{ url_for('naamsestraat_35') }}" class="button"
+      >Naamsestraat_35</a
+    >
+    <a href="{{ url_for('naamsestraat_57') }}" class="button"
+      >Naamsestraat_57</a
+    >
+    <a href="{{ url_for('naamsestraat_62') }}" class="button"
+      >Naamsestraat_62</a
+    >
+    <a href="{{ url_for('calvariekapel') }}" class="button">Calvariekapel</a>
+    <a href="{{ url_for('naamsestraat_81') }}" class="button"
+      >Naamsestraat_81</a
+    >
+    <a href="{{ url_for('vrijthof') }}" class="button">Vrijthof</a>
+  </body>
+</html>
