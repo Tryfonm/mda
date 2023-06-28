@@ -3,6 +3,7 @@ Project `Noise in Leuven` for the course MDA - KU Leuven.
 ### First run the `main_notebook.ipynb` and then run the app with `python app.py`
 
 ###The structure of the dataset should be like the following:
+```
 .
 ├── app.py
 ├── templates
@@ -22,3 +23,4 @@ Project `Noise in Leuven` for the course MDA - KU Leuven.
      ├── Nov
      ├── Oct
      └── Sep
+```
