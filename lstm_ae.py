@@ -1,14 +1,8 @@
-
-import sys
 from pathlib import Path
-sys.path.append('utils')
-
-from logger import get_logger
 
 import torch
 import torch.nn as nn
 
-LOGGER = get_logger(Path(__file__).stem)
 
 class Encoder(nn.Module):
     def __init__(self, feature_size, embedding_size=5, num_layers=1):
@@ -27,7 +21,6 @@ class Encoder(nn.Module):
         h0 = torch.zeros(self.num_layers, x.size(0), self.embedding_size).to(x.device)
         c0 = torch.zeros(self.num_layers, x.size(0), self.embedding_size).to(x.device)
         out, (_, _) = self.lstm(x, (h0, c0))
-        LOGGER.debug(f'encoder output shape: {out.shape} {c0.shape} {h0.shape}')
         return out[:, -1, :] # fetch the last hidden state and return it
     
 class Decoder(nn.Module):
@@ -54,7 +47,6 @@ class Decoder(nn.Module):
         x = x.reshape((-1, self.sequence_length, self.hidden_size))
         
         out = self.fc(x)
-        LOGGER.debug(out.shape, out.shape , out[:,-1,:].shape)
         return out
     
 class LSTM_Autoencoder(nn.Module):
@@ -82,3 +74,6 @@ class LSTM_Autoencoder(nn.Module):
         decoded_tensor = self.decoder(encoded_tensor)
         
         return encoded_tensor, decoded_tensor
+
+if __name__ == '__main__':
+    pass
